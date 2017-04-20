@@ -33,33 +33,44 @@ of those sections to manage the look and feel of the site. */
 
 .intro-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 40px;
     text-align: center;
     background-image: url("../img/intro.jpg");
-    background-size:100%;
-    position:fixed;
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .about-section {
-    height: 100%;
-    padding-top: 150px;
+    height: 80%;
+    padding-top: 40px;
     text-align: center;
-    background:white;
-
-
+    background:#eee;
 }
 
-.services-section {
+.plans-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 40px;
     text-align: center;
-    background: #fff;
+    background-image: url("../img/pexels-photo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.servies-section {
+    height: 80%;
+    padding-top: 40px;
+    text-align: center;
+    background: #eee;
 }
 
 .contact-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 40px;
     text-align: center;
-    background: #eee;
+    background-image: url("../img/intro.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
