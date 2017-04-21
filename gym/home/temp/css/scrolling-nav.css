@@ -42,7 +42,7 @@ of those sections to manage the look and feel of the site. */
 }
 
 .about-section {
-    height: 80%;
+    height: 70%;
     padding-top: 40px;
     text-align: center;
     background:#eee;
@@ -58,8 +58,8 @@ of those sections to manage the look and feel of the site. */
     background-attachment: fixed;
 }
 
-.servies-section {
-    height: 80%;
+.services-section {   
+    height: 70%;
     padding-top: 40px;
     text-align: center;
     background: #eee;
@@ -73,4 +73,15 @@ of those sections to manage the look and feel of the site. */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.WaterMarkedTextBox{
+    height: 16px;
+    width: 168px;
+    padding: 2px 2 2 2px;
+    border: 1px solid #BEBEBE;
+    background-color: #F0F8FF;
+    color: gray;
+    font-size: 8pt;
+    text-align: center;
 }
