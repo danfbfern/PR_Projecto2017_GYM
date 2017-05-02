@@ -11,18 +11,20 @@
 
     <title>EasyGym</title>
 
+        {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/scrolling-nav.css' %}" />
+
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 
 </head>
 
@@ -45,7 +47,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav-left">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
@@ -63,17 +65,111 @@
                         <a class="page-scroll" href="#contact">Contactos</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-right">
+                <ul class="nav navbar-nav-right">
                     <li>
-                        <a class="page-scroll" href="..\..\client\temp\pages\login.html">Login</a>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-
+                    <!--<li>
+                        <a class="page-scroll" href="..\..\client\temp\pages\login.html">Registar</a>
+                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
+    <!--Login System-->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <img class="img-circle" id="img_logo" src="">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <!-- Begin # DIV Form -->
+          <div id="div-forms">
+
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+              <div class="modal-body">
+                <div id="div-login-msg">
+                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-login-msg">Introduza o Username e Password</span>
+                </div>
+                <input id="login_username" class="form-control" type="text" placeholder="Username" required>
+                <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Lembrar-me
+                  </label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                </div>
+                <div>
+                  <button id="login_lost_btn" type="button" class="btn btn-link">Perdeu a Password?</button>
+                  <button id="login_register_btn" type="button" class="btn btn-link">Registar</button>
+                </div>
+              </div>
+            </form>
+            <!-- End # Login Form -->
+
+            <!-- Begin | Lost Password Form -->
+            <form id="lost-form" style="display:none;">
+              <div class="modal-body">
+                <div id="div-lost-msg">
+                  <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-lost-msg">Introduza o email</span>
+                </div>
+                <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                </div>
+                <div>
+                  <button id="lost_login_btn" type="button" class="btn btn-link">Log in</button>
+                  <button id="lost_register_btn" type="button" class="btn btn-link">Registar</button>
+                </div>
+              </div>
+            </form>
+            <!-- End | Lost Password Form -->
+
+            <!-- Begin | Register Form -->
+            <form id="register-form" style="display:none;">
+              <div class="modal-body">
+                <div id="div-register-msg">
+                  <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-register-msg">Registar uma Conta</span>
+                </div>
+                <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+              </div>
+              <div class="modal-footer">
+                <div>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Registar</button>
+                </div>
+                <div>
+                  <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                  <button id="register_lost_btn" type="button" class="btn btn-link">Perdeu a Password?</button>
+                </div>
+              </div>
+            </form>
+            <!-- End | Register Form -->
+
+          </div>
+          <!-- End # DIV Form -->
+
+        </div>
+      </div>
+    </div>
 
     <!-- Intro Section -->
     <section id="intro" class="intro-section">
@@ -92,6 +188,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Sobre</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu mauris nisl. Aliquam egestas lorem eu dapibus tempus. Nunc id luctus lectus, quis fringilla lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ac volutpat orci. Nullam interdum lorem rutrum felis tempus, ac euismod nunc scelerisque. Suspendisse erat nisi, aliquam nec ultrices a, faucibus aliquam tellus. Praesent tortor erat, volutpat at accumsan et, pretium et ante. Nam lobortis, libero vel lobortis accumsan, tortor dolor luctus risus, rhoncus venenatis neque ante nec nunc. Sed consequat, magna eget venenatis scelerisque, leo leo malesuada nisi, mattis feugiat tortor ipsum sed purus. Vestibulum dictum consequat risus, a euismod lectus. Curabitur nec mi et massa efficitur consectetur. Integer nec iaculis odio, id commodo tortor.
+
+Ut elementum nulla quis erat viverra, ac fermentum dui consequat. Nam in nibh vitae risus accumsan elementum ac ut nulla. Sed vehicula convallis tellus. Nullam.
+                    </p>
                 </div>
             </div>
         </div>
@@ -114,6 +214,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Serviços Prestados</h1>
+                    <div id="frag_1" style="position:absolute;left:120px;top:130px;width:48px;height:48px;">
+                      <i class="material-icons md-180" >shopping_basket</i>
+                    </div>
+                    <div id="frag_2" style="position:absolute;left:500px;top:130px;width:48px;height:48px;">
+                      <i class="material-icons md-180" >perm_identity</i>
+                    </div>
+                    <div id="frag_3" style="position:absolute;left:900px;top:130px;width:48px;height:48px;">
+                      <i class="material-icons md-180" >shopping_cart</i>
+                    </div>
+                    <div id="txt_1" style="position:absolute;left:60px;top:300px;width:300px;height:50px;overflow:hidden;">
+                      <h3 class="Heading-1"><span class="C-15">Venda de Suplementos</span></h3>
+                    </div>
+                    <div id="txt_4" style="position:absolute;left:60px;top:370px;width:300px;height:150px;overflow:hidden;">
+                      <p class="Body"><span class="C-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis turpis et ipsum bibendum dapibus. Etiam placerat, magna in mollis interdum, tortor urna venenatis urna.</span></p></div>
+                    <div id="txt_2" style="position:absolute;left:440px;top:300px;width:300px;height:50px;overflow:hidden;">
+                      <h3 class="Heading-2"><span class="C-15">Area de Cliente</span></h3>
+                    </div>
+                    <div id="txt_5" style="position:absolute;left:440px;top:370px;width:300px;height:150px;overflow:hidden;">
+                      <p class="Body"><span class="C-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis turpis et ipsum bibendum dapibus. Etiam placerat, magna in mollis interdum, tortor urna venenatis urna.</span></p></div>
+                    <div id="txt_3" style="position:absolute;left:830px;top:300px;width:300px;height:50px;overflow:hidden;">
+                      <h3 class="Heading-3"><span class="C-15">Venda de Merchadising</span></h3>
+                    </div>
+                    <div id="txt_6" style="position:absolute;left:830px;top:370px;width:300px;height:150px;overflow:hidden;">
+                      <p class="Body"><span class="C-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis turpis et ipsum bibendum dapibus. Etiam placerat, magna in mollis interdum, tortor urna venenatis urna.</span></p></div>
+
                 </div>
             </div>
         </div>
@@ -129,27 +254,23 @@
             </div>
         </div>
     </section>
+  <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'js/jquery.js' %} "></script>
+    <<!--<script src="static/js/jquery.js"></script>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+   <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!--<script src="static/js/bootstrap.min.js"></script>
 
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Scrolling Nav JavaScript -->-----
+    <script type="text/javascript" src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/scrolling-nav.js' %}"></script>
+   <!-- <script src="static/js/jquery.easing.min.js"></script>
+    <script src="static/js/scrolling-nav.js"></script>
+-->
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
 
 </body>
 
