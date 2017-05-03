@@ -1,0 +1,70 @@
+
+#Image{
+  Image: url("res/alter.jpg");
+    opacity: 0.5
+}
+.upload-button {
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  position: relative;
+  left:300px;
+  top:300px;
+
+}
+
+.profile-pic {
+  width:230px;
+  height: 250px;
+  display: block;
+  position: absolute;
+
+
+  border: 5px solid #337ab7;
+  border-radius: 10px;
+
+  background-color: #fbfbfb;
+  left:300px;
+  top:100px;
+
+  "data-controltype="image"
+
+}
+
+.file-upload {
+
+  display: none ;
+  position: absolute;
+
+}
+
+.title1 {
+  font-size: 80px;
+  position: absolute;
+  top: 300px;
+  left: 550px;
+  color:#337ab7
+}
+
+.title2{
+  font-size: 20px;
+  position: relative;
+  top: 500px;
+  left: 200px;
+}
+
+.title3{
+  font-size: 22px;
+  position: inherit;
+  display: inline;
+  color:#337ab7
+
+}
+.title4{
+    font-size: 20px;
+    position: relative;
+    display: inline;
+}
+}
