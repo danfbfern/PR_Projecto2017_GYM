@@ -1,8 +1,5 @@
-/*!
- * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+ @import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
     width: 100%;
@@ -27,31 +24,26 @@ html {
     }
 }
 
-/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
-The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
-of those sections to manage the look and feel of the site. */
-
 .intro-section {
     height: 100%;
-    padding-top: 40px;
+    padding-top: 3%;
     text-align: center;
-    background-image: url("../img/intro.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/intro.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity:0.5;
 }
 
 .about-section {
     height: 50%;
-    padding-top: 40px;
+    padding-top: 3%;
     text-align: center;
     background:#eee;
 }
 
-.plans-section {
+.text-section {
     height: 100%;
-    padding-top: 40px;
+    padding-top: 3%;
     text-align: center;
     background-image: url("../img/pexels-photo.jpg");
     background-size: cover;
@@ -61,30 +53,236 @@ of those sections to manage the look and feel of the site. */
 
 .services-section {
     height: 70%;
-    padding-top: 40px;
+    padding-top: 3%;
+    text-align: center;
+    background: #eee;
+}
+
+.plans-section {
+    height: 100%;
+    padding-top: 3%;
+    text-align: center;
+    background-image: url("../img/pexels-photo-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.testimony-section {
+    height: 70%;
+    padding-top: 3%;
     text-align: center;
     background: #eee;
 }
 
 .contact-section {
     height: 100%;
-    padding-top: 40px;
+    padding-top: 3%;
     text-align: center;
-    background-image: url("../img/intro.jpg");
+    background-image: url("../img/pexels-photo-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-#about p{
-  padding: 50px;
+
+#intro h1{
+  position: relative;
+  text-align: center;
+  padding-top: 35%;
+  color: white;
+  font-size: 300%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-weight: bold;
 }
+#intro h2{
+  position: relative;
+  text-align: center;
+  padding-top: 5%;
+  color: white;
+  font-size: 300%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-weight: bold;
+}
+#intro i{
+  position: relative;
+  text-align: center;
+  padding-top: 2%;
+  color: white;
+}
+
+#about img{
+  float: left;
+  margin: 5%;
+  width:25%;
+}
+#about p{
+  margin: 5%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 120%;
+  position: relative;
+  left:2%;
+  width: 90%;
+}
+#text h1{
+  position: relative;
+  text-align: center;
+  margin-top: 20%;
+  color: white;
+  font-size: 350%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#text h2{
+  position: relative;
+  text-align: center;
+  margin-top: 5%;
+  color: white;
+  font-size: 350%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#text h3{
+  position: relative;
+  text-align: center;
+  margin-top: 5%;
+  color: white;
+  font-size: 350%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#text i{
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: 10%;
+}
+#srv_icon_1{
+  position:absolute;left:120px;top:180%;width:15%;height:15%;
+}
+#srv_icon_2{
+  position:absolute;left:500px;top:180%;width:15%;height:15%;
+}
+#srv_icon_3{
+  position:absolute;left:900px;top:180%;width:15%;height:15%;
+}
+#serv_head_1{
+  position:absolute;left:60px;top:430%;width:300px;height:50px;overflow:hidden;
+}
+#serv_head_2{
+  position:absolute;left:440px;top:430%;width:300px;height:50px;overflow:hidden;
+}
+#serv_head_3{
+  position:absolute;left:830px;top:430%;width:300px;height:50px;overflow:hidden;
+}
+#serv_body_1{
+  position:absolute;left:60px;top:530%;width:300px;height:150px;overflow:hidden;
+}
+#serv_body_2{
+  position:absolute;left:440px;top:530%;width:300px;height:150px;overflow:hidden;
+}
+#serv_body_3{
+  position:absolute;left:830px;top:530%;width:300px;height:150px;overflow:hidden;
+}
+
 #plans h1{
-  padding: 10px;
+  padding: 2%;
   background-color: white;
   opacity: 0.7;
   color: black;
 }
+#plano_free_head h2{
+  margin-top: 1%;
+  padding: 2%;
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  width: 49%;
+  float: left;
+}
 
+#plano_premium_head h2{
+  margin-top: 1%;
+  padding: 2%;
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  width: 49%;
+  float: right;
+}
+#plano_free_body h2{
+  margin-top: 1%;
+  padding: 2%;
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  width: 49%;
+  float: left;
+  min-height: 500px;
+}
+
+#plano_premium_body h2{
+  margin-top: 1%;
+  padding: 2%;
+  background-color: white;
+  opacity: 0.7;
+  color: black;
+  width: 49%;
+  float: right;
+  min-height:500px;
+}
+#testimony_text{
+  font-size: 200%;
+  margin-top: 5%;
+}
+#testimony_id{
+  font-size: 100%;
+  margin-top: 5%;
+}
+.testimony-1,
+.testimony-2,
+.testimony-3 {
+  overflow: hidden;
+	position: absolute;
+  display: block;
+	top: 300%;
+  width: 60%;
+	animation-duration: 20s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.testimony-1{
+	animation-name: anim-1;
+}
+
+.testimony-2{
+	animation-name: anim-2;
+}
+
+.testimony-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 5% { left: -100%; opacity: 0; }
+  10%,30% { left: 20%; opacity: 1; }
+  35%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 35% { left: -100%; opacity: 0; }
+  40%, 60% { left: 20%; opacity: 1; }
+  65%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 65% { left: -100%; opacity: 0; }
+  70%, 90% { left: 20%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
 #contact h1{
   padding: 10px;
   background-color: white;
@@ -94,13 +292,6 @@ of those sections to manage the look and feel of the site. */
 .material-icons.md-96 { font-size: 96px; }
 .material-icons.md-120 { font-size: 120px; }
 .material-icons.md-180 { font-size: 180px; }
-
-
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-
-* {
-    font-family: 'Roboto', sans-serif;
-}
 
 #login-modal .modal-dialog {
     width: 550px;
