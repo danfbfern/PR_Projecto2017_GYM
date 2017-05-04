@@ -1,8 +1,5 @@
 
-#Image{
-  Image: url("res/alter.jpg");
-    opacity: 0.5
-}
+
 .upload-button {
   padding: 4px;
   border: 1px solid black;
@@ -17,21 +14,21 @@
 
 .profile-pic {
   width:230px;
-  height: 250px;
+  height: 245px;
   display: block;
   position: absolute;
 
 
-  border: 5px solid #337ab7;
+  border: 5px solid #366E7C;
   border-radius: 10px;
 
   background-color: #fbfbfb;
-  left:300px;
-  top:100px;
+  left:330px;
+  top:140px;
 
-  "data-controltype="image"
 
-}
+  }
+  
 
 .file-upload {
 
@@ -41,30 +38,40 @@
 }
 
 .title1 {
-  font-size: 80px;
+  font-size: 35px;
   position: absolute;
-  top: 300px;
-  left: 550px;
-  color:#337ab7
+  top: 400px;
+  left: 330px;
+  color:#366E7C
+
 }
 
 .title2{
   font-size: 20px;
   position: relative;
-  top: 500px;
-  left: 200px;
+  top: 50px;
+  left: 700px;
+  color:#366E7C
 }
 
 .title3{
   font-size: 22px;
   position: inherit;
   display: inline;
-  color:#337ab7
+  color:#366E7C
 
 }
 .title4{
     font-size: 20px;
     position: relative;
     display: inline;
+}
+
+#changeButton:hover{
+    background-color:#d0e4ea;
+}
+#changeButton{
+  border: 2px solid #366E7C;
+  border-radius: 5px
 }
 }

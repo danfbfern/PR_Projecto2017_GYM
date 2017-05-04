@@ -18,7 +18,7 @@ $(document).ready(function() {
         readURL(this);
     });
 
-    $(".upload-button").on('click', function() {
+    $(".profile-pic").on('click', function() {
        $(".file-upload").click();
     });
 });
