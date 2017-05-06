@@ -3382,7 +3382,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   left: 44%;
   top: 25%;
   content: url('../img/Logo_simples_branco.png');
-  width: 12%;;
+  width: 12%;
+  opacity: 0.8;
   }
   .navbar-header.scrolled {
   float: left;

@@ -1,0 +1,188 @@
+body{
+  background-color: #eee;
+  font-family: Arial;
+  opacity: 1;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.plans-section{
+  height: 100%;
+  text-align: center;
+
+}
+
+#plans h1{
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  color: #366E7C;;
+}
+#plans h1::before{
+  content: "";
+  position: absolute;
+  width: 30%;
+  bottom: -30%;
+  left: 35%;
+  border-bottom: 3px solid #D8543F;
+}
+#plano_free{
+  float: left;
+  margin-left: 11%;
+  margin-top: 4%;
+  padding: 2%;
+  background-color: white;
+}
+#plano_premium{
+  float: right;
+  margin-right: 11%;
+  margin-top: 4%;
+  padding: 2%;
+  background-color: white;
+}
+#plano_free h2{
+  font-size: 250%;
+  font-weight: bold;
+  color: #366E7C;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+#plano_free h2::before{
+  font-size: 250%;
+  font-weight: bold;
+  color: #366E7C;
+  content: "";
+  position: absolute;
+  width: 150%;
+  bottom: -30%;
+  left: -25%;
+  border-bottom: 3px solid #D8543F;
+}
+
+#plano_premium h2{
+  font-size: 250%;
+  font-weight: bold;
+  color: #366E7C;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+#plano_premium h2::before{
+  font-size: 250%;
+  font-weight: bold;
+  color: #366E7C;
+  content: "";
+  position: absolute;
+  width: 120%;
+  bottom: -30%;
+  left: -10%;
+  border-bottom: 3px solid #D8543F;
+}
+
+#plano_free ul{
+  font-size: 225%;
+  min-height: 1200px;
+  list-style-type: none;
+  text-align: center;
+  color: #366E7C;
+  margin-left: -10%;
+}
+#plano_free ul > li {
+  padding-bottom: 5%;
+}
+#plano_free h3{
+  margin-top: -10%;
+  font-size: 200%;
+  text-align: center;
+  color: white;
+  background-color: #366E7C;
+  width: 60%;
+  margin-left: 20%;
+  cursor: pointer;
+}
+#plano_premium ul{
+  font-size: 225%;
+  min-height:1200px;
+  list-style-type: none;
+  text-align: center;
+  color: #366E7C;
+  margin-left: -10%;
+}
+#plano_premium ul > li {
+  padding-bottom: 5%;
+}
+#plano_premium h3{
+  margin-top: -10%;
+  font-size: 200%;
+  text-align: center;
+  color: white;
+  background-color: #366E7C;
+  width: 60%;
+  margin-left: 20%;
+  cursor: pointer;
+}
+
+#plano_free span{
+  font-size: 50%;
+  display: block;
+}
+#plano_premium span{
+  font-size: 50%;
+  display: block;
+}
+#plano_free p{
+  margin: 0;
+
+}
+#plano_premium p{
+  margin: 0;
+}
+
+.return{
+  position: fixed;
+  top: 85%;
+  left: 90%;
+  color: #366E7C;
+}
+.return:hover{
+  color: #D8543F;
+}
+
+.material-icons.md-96 { font-size: 96px; }
+.material-icons.md-120 { font-size: 120px; }
+.material-icons.md-180 { font-size: 180px; }
