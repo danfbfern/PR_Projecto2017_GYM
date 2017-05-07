@@ -11,14 +11,18 @@
 
   <title>EasyGym - Planos</title>
 
-  <link rel="stylesheet" type="text/css" href="static/css/plans.css" />
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/plans.css' %}" />
+
+  <!--<link rel="stylesheet" type="text/css" href="static/css/plans.css" />
   <!-- icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
   <section id="plans" class="plans-section">
-    <img src="static/img/Logo_principal.png" width="10%">
+    <img src="{% static 'img/Logo_principal.png' %}" width="10%"/>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -37,7 +41,8 @@
                 <li></li>
                 <li></li>
               </ul>
-              <h3>Registar</h3>
+
+              <a href="/home"#login-modal ><h3>Registar</h3></a>
             </div>
             <div id="plano_premium">
               <h2>Plano PREMIUM</h2>
@@ -58,7 +63,7 @@
         </div>
       </div>
     </div>
-    <a class="return" href="index.html">
+    <a class="return" href="/home">
       <i class="material-icons md-96">home</i>
     </a>
   </section>
