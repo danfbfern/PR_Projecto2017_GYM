@@ -3,7 +3,7 @@ from django.contrib.auth import logout
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from .forms import AlbumForm, SongForm, UserForm
+
 from .models import Album, Song
 
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
@@ -124,7 +124,7 @@ def favorite_album(request, album_id):
 
 def index(request):
     if not request.user.is_authenticated():
-        return render(request, 'music/login.html')
+        return render(request, 'login.html')
     else:
         albums = Album.objects.filter(user=request.user)
         song_results = Song.objects.all()
@@ -137,7 +137,7 @@ def index(request):
             song_results = song_results.filter(
                 Q(song_title__icontains=query)
             ).distinct()
-            return render(request, 'music/index.html', {
+            return render(request, 'login.html', {
                 'albums': albums,
                 'songs': song_results,
             })

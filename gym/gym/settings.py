@@ -56,7 +56,7 @@ ROOT_URLCONF = 'gym.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['home/temp', 'client/temp/pages'],
+        'DIRS': ['home/temp', 'client/templates/client'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
