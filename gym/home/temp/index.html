@@ -62,7 +62,7 @@
                         <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
                     <li>
-                      <a class="page-scroll" href="#contact">Contactos</a>
+                      <a class="page-scroll" href="#contacts">Contactos</a>
                     </li>
                     <li>
                       <a class="page-scroll" href="#testimony">Testemunhos</a>
@@ -144,8 +144,11 @@
                   <span id="text-register-msg">Registar uma Conta</span>
                 </div>
                 <input id="register_username" class="form-control" type="text" placeholder="Username" required>
-                <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                <input id="register_email" class="form-control" type="email" placeholder="E-Mail" required>
                 <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                <input id="register_password" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data de Nascimento" required>
+                <input id="register_username" class="form-control" type="number" placeholder="Peso" required>
+                <input id="register_email" class="form-control" type="number" placeholder="Altura" required>
               </div>
               <div class="modal-footer">
                 <div>
@@ -235,7 +238,7 @@
               <h3 class="Heading-1"><span class="C-15">Venda de Suplementos</span></h3>
             </div>
             <div id="serv_body_1">
-              <p class="Body"><span class="C-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis turpis et ipsum bibendum dapibus. Etiam placerat, magna in mollis interdum, tortor urna venenatis urna.</span></p></div>
+              <p class="Body"><span class="C-16">Loja online onde podes adquirir todo o tipo de suplementos necessarios à boa performance do teu treino.</span></p></div>
               <div id="serv_head_2">
                 <h3 class="Heading-2"><span class="C-15">Área de Cliente</span></h3>
               </div>
@@ -245,7 +248,7 @@
                   <h3 class="Heading-3"><span class="C-15">Venda de Merchandising</span></h3>
                 </div>
                 <div id="serv_body_3">
-                  <p class="Body"><span class="C-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis turpis et ipsum bibendum dapibus. Etiam placerat, magna in mollis interdum, tortor urna venenatis urna.</span></p></div>
+                  <p class="Body"><span class="C-16">A marca EasyGym tem uma vasta gama de produtos, tais como vestuario desportivo, calçado desportivo e muito mais.</span></p></div>
 
                 </div>
               </div>
@@ -313,9 +316,9 @@
                       <p id="testimony_id">Daniel Leal</p>
                     </div>
                     <div class="testimony-3">
-                      <img class="img-circle"src="{% static 'img/ramos.jpg' %}" width=100px >
+                      <img class="img-circle"src="{% static 'img/rn.png' %}" width=100px >
                       <p id="testimony_text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis fringilla quam, eu pharetra felis consectetur nec. Suspendisse egestas elementum venenatis. Donec viverra finibus rutrum."</p>
-                      <p id="testimony_id">ola ola</p>
+                      <p id="testimony_id">Casal: João Neto e Ricardo Lopes</p>
                     </div>
                   </div>
             </div>
