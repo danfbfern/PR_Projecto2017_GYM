@@ -1,0 +1,38 @@
+
+.title {
+  font-size: 80px;
+  position: absolute;
+  top: 100px;
+  left: 330px;
+  color:#366E7C
+}
+
+#line{
+  width:1000px;
+  height: 0px;
+
+
+  position: absolute;
+
+
+  border: 1px solid #D8543F;
+  border-radius: 10px;
+
+  background-color: #fbfbfb;
+  left:330px;
+  top:200px;
+
+}
+
+#optionList{
+  width: 350px;
+  height: 80px;
+  font-size: 40px;
+  border: 1px solid #366E7C;
+  border-radius: 5px;
+
+  position: absolute;
+  top: 250px;
+  left: 330px;
+}
+

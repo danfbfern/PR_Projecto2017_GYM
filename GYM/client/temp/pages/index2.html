@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EasyGym - Area de Cliente</title>
+ {% load static %}
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="../../static/css/bootstrap.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/bootstrap2.css' %}">
+
+     <!-- MetisMenu CSS -->
+    <!-- <link href="../../static/css/metisMenu.min.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/metisMenu.css' %}">
+    <!-- Custom CSS -->
+     <!--<link href="../../static/css/sb-admin-2.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/sb-admin-2.css' %}">
+    <!-- Custom Fonts -->
+    <!-- <link href="../../static/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/font-awesome.css' %}">
+
+    <!-- Morris Charts CSS -->
+   <!-- <link href="../../static/css/morris.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/morris.css' %}">
+
+
+
+    <!-- ProfilePic css -->
+    <!-- <link href="../../static/css/profile.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/profile.css' %}">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- <div background-image: "#Image"></div> -->
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="..\..\..\home">Easy Gym</a>
+                <a class="navbar-brand" href="..\..\..\home">Loja</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="index2.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+
+<!--right board|||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+                        <li>
+                            <a href=""><i class="fa fa-user fa-fw"></i> Página Pessoal</a>
+                        </li>
+
+                        <li>
+                            <a href="objetivos"><i class="fa fa-mortar-board  fa-fw"></i> Objetivos</a>
+                        </li>
+                        <li>
+                            <a href="evolucao"><i class="fa fa-bar-chart-o   fa-fw"></i> Evolução</a>
+                        </li>
+                        <li>
+                            <a href="treinos"><i class="fa fa-child    fa-fw"></i> Treinos</a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+
+  <!--<form id="profilepic_form">
+  <fieldset id="profilepic_controls">
+
+  <div style="width: 130px; height: 150px; position: relative; background-color: #fbfbfb; left:300px; top:100px;   border: 1px solid #b8b8b8; "data-controltype="image">
+  <img src="https://codiqa.com/static/images/v2/image.png" alt="image" name="img1" style="position:     absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+
+  <form action="img1">
+  alterar foto   <input type="file" name="" id="camerainput1" accept="image/*"  formtarget="img1">
+  <input type="submit" value="Submit">
+  </form>
+
+ </div>
+</fieldset>
+</form> -->
+
+
+<!--parte inicial-->
+
+<div  >
+    <img class="profile-pic" name="img" src="{% static 'img/default.png' %}" style="position:     absolute; ">
+    <input class="file-upload" type="file" accept="image/*" style="display: none"/>
+
+      <div class="title1" style="width:230px;">Ricardo Lopes</div>
+
+</div>
+
+
+
+<!--info login-->
+<div>
+  <div class="title2"> Login info: </div>
+  <br>
+    <div style=" position:relative; border-radius: 10px;background-color: #fbfbfb; left:700px; top:40px; max-width:700px;   border: 5px solid #366E7C;"  >
+    <br>
+
+      <div><div class=title3>   &nbsp; &nbsp;Nome de Login:</div>  <div class=title4>ricardo.lopes</div><br></div><br>
+      <div><div class=title3> &nbsp; &nbsp;Password:</div> <div class=title4> ******** &nbsp; &nbsp;</div>
+            <button id=changeButton> Alterar</button><br>
+      </div><br>
+      <div><div class=title3> &nbsp; &nbsp;Email:</div> <div class=title4>rjpls@iscte-iul.pt &nbsp; &nbsp;</div>
+            <button id=changeButton >Alterar</button><br>
+      </div><br>
+      <div><div class=title3> &nbsp; &nbsp;Tipo de Cliente:</div> <div class=title4> Premium <br></div><br></div>
+    </div>
+    <br>
+
+</div>
+
+<!--sobre mim area-->
+<div>
+  <div class="title2" style=" top: 90px; left: 700px;"> Sobre mim: </div>
+  <br>
+  <div style=" position:relative;   border-radius: 10px; background-color: #fbfbfb; left:700px; top:100px; max-width:700px;   border: 5px solid #366E7C;"  >
+  <br>
+  <div><div class=title3>   &nbsp; &nbsp;Sexo:</div>  <div class=title4>masculino</div><br></div><br>
+  <div><div class=title3>   &nbsp; &nbsp;Data de Nascimento:</div>  <div class=title4>22-7-1996</div><br></div><br>
+  <div><div class=title3>   &nbsp; &nbsp;Altura:</div>  <div class=title4>1.80 m</div><br></div><br>
+  <div><div class=title3>   &nbsp; &nbsp;Peso Inicial:</div>  <div class=title4>85.0 kg</div><br></div><br>
+  <div><div class=title3>   &nbsp; &nbsp;Peso Atual:</div>  <div class=title4>80.0 kg</div><br></div><br>
+  <div><div class=title3>   &nbsp; &nbsp;IMC:</div>  <div class=title4>24.69 (normal)</div><br></div><br>
+  </div>
+</div>
+
+
+
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../static/js/jquery.min.js"></script>
+ <script type="text/javascript" src="{% static 'js/jquery2.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="../../static/js/bootstrap2.min.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/bootstrap2.js' %}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <!-- <script src="../../static/js/metisMenu.min.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/metisMenu.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <!-- <script src="../../static/js/sb-admin-2.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/sb-admin-2.js' %}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <!-- <script src="../../static/js/raphael.min.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/raphael.js' %}"></script>
+    <!-- <script src="../../static/js/morris.min.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/morris.js' %}"></script>
+    <!-- <script src="../../static/js/morris-data.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/morris-data.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+
+   <!--  <script src="../../static/js/profilePic.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/profilePic.js' %}"></script>
+    </div>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+ {% load static %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,24 +10,36 @@
     <meta name="author" content="">
 
   <title>EasyGym - Area de Cliente</title>
-
+{% load static %}
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="../../static/css/bootstrap.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/bootstrap2.css' %}">
 
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.css" rel="stylesheet">
+     <!-- MetisMenu CSS -->
+    <!-- <link href="../../static/css/metisMenu.min.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/metisMenu.css' %}">
+    <!-- Custom CSS -->
+     <!--<link href="../../static/css/sb-admin-2.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/sb-admin-2.css' %}">
+    <!-- Custom Fonts -->
+    <!-- <link href="../../static/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/font-awesome.css' %}">
+
+    <!-- Morris Charts CSS -->
+   <!-- <link href="../../static/css/morris.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/morris.css' %}">
+
+    <!-- ProfilePic css -->
+    <!-- <link href="../../static/css/profile.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/profile.css' %}">
 
     <!-- DataTables CSS -->
-    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+   <!-- <link href="../../static/css/dataTables.bootstrap.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/dataTables.bootstrap.css' %}">
 
     <!-- DataTables Responsive CSS -->
-    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet"> -->
+    <link rel ='stylesheet' type='text/css'  href="{% static 'css/datatables-responsive/dataTables.responsive.css' %}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,8 +63,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="..\..\..\home\temp\index.html">Easy Gym</a>
-                <a class="navbar-brand" href="..\..\..\home\temp\index.html">Loja</a>
+                <a class="navbar-brand" href="..\..\..\home">Easy Gym</a>
+                <a class="navbar-brand" href="..\..\..\home">Loja</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -84,17 +96,17 @@
                     <ul class="nav" id="side-menu">
 
                         <li>
-                            <a href="index.html"><i class="fa fa-user fa-fw"></i> Página Pessoal</a>
+                            <a href=".."><i class="fa fa-user fa-fw"></i> Página Pessoal</a>
                         </li>
 
                         <li>
-                            <a href="objetivos.html"><i class="fa fa-mortar-board  fa-fw"></i> Objetivos</a>
+                            <a href=""><i class="fa fa-mortar-board  fa-fw"></i> Objetivos</a>
                         </li>
                         <li>
-                            <a href="evolucao.html"><i class="fa fa-bar-chart-o   fa-fw"></i> Evolução</a>
+                            <a href="../evolucao"><i class="fa fa-bar-chart-o   fa-fw"></i> Evolução</a>
                         </li>
                         <li>
-                            <a href="treinos.html"><i class="fa fa-child   fa-fw"></i> Treinos</a>
+                            <a href="../treinos"><i class="fa fa-child   fa-fw"></i> Treinos</a>
                         </li>
 
                     </ul>
@@ -104,24 +116,30 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-
-
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.js"></script>
+    <!--<script src="../../static/js/jquery.min.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.js"></script>
-
+  <!--  <script src="../../static/js/bootstrap2.min.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.js"></script>
+   <!-- <script src="../../static/js/metisMenu.min.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/metisMenu.min.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+
+  <!-- <script src="../../static/js/sb-admin-2.js"></script> -->
+ <script type="text/javascript" src="{% static 'js/sb-admin-2.js' %}"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+   <!--  <script src="../../static/js/jquery.dataTables.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/jquery.dataTables.js' %}"></script>
+   <!--  <script src="../../static/js/dataTables.bootstrap2.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/dataTables.bootstrap.js' %}"></script>
+   <!--  <script src="../../static/js/dataTables.responsive.js"></script> -->
+        <script type="text/javascript" src="{% static 'js/dataTables.responsive.js' %}"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
