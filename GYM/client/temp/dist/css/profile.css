@@ -1,17 +1,5 @@
 
 
-.upload-button {
-  padding: 4px;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: block;
-  float: left;
-  position: relative;
-  left:300px;
-  top:300px;
-
-}
-
 .profile-pic {
   width:230px;
   height: 245px;
@@ -28,7 +16,7 @@
 
 
   }
-  
+
 
 .file-upload {
 
