@@ -63,7 +63,8 @@ html {
     height: 100%;
     padding-top: 3%;
     text-align: center;
-    background-image: url("../img/pexels-photo.jpg");
+    background-image: url("../img/EasyGym3.jpg");
+    background-position: 0% 70%;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -418,7 +419,7 @@ html {
     margin-top: 200px;
 }
 
-#login-modal input[type=text], input[type=password] {
+#login-modal input[type=text], input[type=password], input[type=date]  {
 	margin-top: 10px;
 }
 
