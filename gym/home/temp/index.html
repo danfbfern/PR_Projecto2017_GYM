@@ -137,23 +137,30 @@
             <!-- End | Lost Password Form -->
 
             <!-- Begin | Register Form -->
-            <form id="register-form" style="display:none;">
+            <form method="post" action='' id="register-form" style="display:none;">
+                {% csrf_token %}
               <div class="modal-body">
                 <div id="div-register-msg">
                   <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
                   <span id="text-register-msg">Registar uma Conta</span>
                 </div>
-                <input id="register_username" class="form-control" type="text" placeholder="Username" required>
-                <input id="register_email" class="form-control" type="email" placeholder="E-Mail" required>
-                <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-                <input id="register_password" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Data de Nascimento" required>
-                <input id="register_username" class="form-control" type="number" placeholder="Peso" required>
-                <input id="register_email" class="form-control" type="number" placeholder="Altura" required>
+
+                  <label for="register_username"> <input id="register_username" name ='username' value='{{current_username}}' class="form-control" type="text" placeholder="Username" required></label>
+                 <label for="register_email"><input id="register_email" name ='email' value='{{current_email}}' class="form-control" type="email" placeholder="E-Mail" required></label>
+                 <label for="register_password"><input id="register_password" name ='password' value='{{current_password}}' class="form-control" type="password" placeholder="Password" required></label>
+                 <label for="register_idade"><input id="register_idade" name ='idade' value='{{current_idade}}' class="form-control" type="number"  placeholder="Idade" required></label>
+                 <label for="register_peso"><input id="register_peso" name ='peso' value='{{current_peso}}' class="form-control" type="number" placeholder="Peso" required></label>
+                 <label for="register_altura"><input id="register_altura" name ='altura' value='{{current_altura}}' class="form-control" type="number" placeholder="Altura" required></label>
+
               </div>
               <div class="modal-footer">
                 <div>
-                  <button type="submit" class="btn btn-primary btn-lg btn-block">Registar</button>
+                    <a href="{% url 'index'%}">
+                        <input type="submit" value="Gravar User">
+                  <button type="submit" value="Gravar User"class="btn btn-primary btn-lg btn-block">Registar</button>
+                         </a>
                 </div>
+
                 <div>
                   <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
                   <button id="register_lost_btn" type="button" class="btn btn-link">Perdeu a Password?</button>
