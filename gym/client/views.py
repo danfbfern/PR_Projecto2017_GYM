@@ -1,14 +1,17 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
 from django.db.models import Q
-
-from .models import Album, Song
-from .forms import UserForm
+from django.http import HttpResponse
+from .models import Album, Song,Profile
+from .forms import UserForm,ProfileForm
 
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
+
+def index(request):
+    return render(request, 'home.html')
 
 
 def create_album(request):
@@ -160,11 +163,19 @@ def login_user(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
+
         if user is not None:
             if user.is_active:
-                login(request, user)
-                albums = Album.objects.filter(user=request.user)
-                return render(request, 'client/index.html', {'albums': albums})
+                 login(request, user)
+                 user_account = request.user
+                 albums = Album.objects.filter(user=request.user)
+
+
+                 if Profile(user_account).is_premiumm(request.user) is True:
+                     return render(request, 'client/index.html', {'albums': albums})
+                 else:
+                     return HttpResponse('LOOOOOOOL DEU')
+
             else:
                 return render(request, 'client/login.html', {'error_message': 'Your account has been disabled'})
         else:
@@ -174,12 +185,18 @@ def login_user(request):
 
 def register(request):
     form = UserForm(request.POST or None)
+    profile = ProfileForm()
+
     if form.is_valid():
         user = form.save(commit=False)
+        profile2 = form.save(commit=False)
+        profile2.user = request.user
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
         user.set_password(password)
+        profile2.save()
         user.save()
+
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
@@ -187,7 +204,8 @@ def register(request):
                 albums = Album.objects.filter(user=request.user)
                 return render(request, 'client/index.html', {'albums': albums})
     context = {
-        "form": form,
+        "form": form
+
     }
     return render(request, 'client/register.html', context)
 
@@ -210,3 +228,25 @@ def songs(request, filter_by):
             'song_list': users_songs,
             'filter_by': filter_by,
         })
+#@login_required
+#@transaction.atomic
+def update_profile(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            #messages.success(request, _('Your profile was successfully updated!'))
+            print('sucesso')
+            return redirect('profile')
+        else:
+            #messages.error(request, _('Please correct the error below.'))
+            print('erro')
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    return render(request, 'profile.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })

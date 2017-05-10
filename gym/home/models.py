@@ -23,3 +23,21 @@ class User(models.Model):
 
 
     objects = UserManager()
+
+class Profile(models.Model):
+    user = models.OneToOneField(User)
+    is_normal = models.BooleanField(default=True)
+    is_premium = models.BooleanField(default=False)
+    idade = models.IntegerField(blank=True)
+    altura = models.IntegerField(blank=True)
+    peso = models.IntegerField(blank=True)
+
+#@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+#@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
+
