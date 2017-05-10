@@ -1,5 +1,6 @@
 body {
     background: white url("images/background.png");
+    padding-top: 50px;
 }
 
 ul.errorlist {
@@ -12,17 +13,79 @@ ul.errorlist > li {
 
 .navbar {
     border-radius: 0;
+    margin-bottom: 0;
 }
 
 .navbar-brand {
     font-family: 'Satisfy', cursive;
 }
-
-.glyphicon-star {
-    color: #CCCCCC;
-    font-size: 16px;
+.menu-toggle{
+  color: white;
 }
 
-.glyphicon-star.active {
-    color: #FDB230;
+h2{
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  color: #366E7C;
+  margin-bottom: 2%;
+}
+h2::before{
+  content: "";
+  position: absolute;
+  width: 30%;
+  bottom: -30%;
+  left: 35%;
+  border-bottom: 3px solid #D8543F;
+}
+
+#sidebar-wrapper{
+  z-index: 1;
+  position: fixed;
+  width: 0;
+  height: 100%;
+  overflow-y: hidden;
+  background-color: #366E7C;
+
+}
+#page-content-wrapper{
+  width:100%;
+  margin-left: 0;
+  position: absolute;
+}
+#wrapper.menu #sidebar-wrapper{
+  width: 13%;
+  transition: right 0.6s ease;
+}
+
+#wrapper.menu #page-content-wrapper{
+  margin-left: 13%;
+  width:87%;
+}
+#menu-toggle{
+  color: white;
+
+}
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 5px;
+    line-height: 40px;
+}
+.sidebar-nav li:active {
+    background-color: white;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.sidebar-nav li a:hover {
+    background: #D8543F;
 }
