@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>EasyGym - Planos</title>
+
+  {% load static %}
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{%static 'CSS/login.css'%}"/>
+
+  <!-- icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+
+</head>
+<body>
+  <section id="log" class="log-section">
+    <img src="{% static 'img/Logo_principal.png' %}" width="10%"/>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-offset-5 col-md-2 ">
+          <h1>Log In</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="{% url 'client:login_user'%}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_username">
+                                <h2>Username:</h2>
+                            </label>
+                            <div class="col-sm-10">
+                                <input style="border: 3px solid #366E7C;" id="id_username" class="login" maxlength="30" name="username" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_password">
+                                <h2>Password:</h2>
+                            </label>
+                            <div class="col-sm-10">
+                                <input style="border: 3px solid #366E7C;" id="id_password" maxlength="30" name="password" type="password">
+                            </div>
+                        </div>
+                        <div class="form-group"><br>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">LOGIN</button>
+                            </div>
+                        </div>
+                    </form>
+                </div><br>
+                <div class="panel-footer" style="color: #366E7C; font-size:12px;">
+                    Don't have an account? <a href="{% url 'client:register' %}">Click here</a> to register.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
