@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}EasyGym{% endblock %}</title>
-  {% load staticfiles %}
+  {% load static %}
   <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' >
@@ -29,7 +29,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'client:client_index' %}"><div><img src="{% static 'client/images/Logo_muito_simples_branco_small.png' %}"/></div></a>
+        <a class="navbar-brand"  href="#"><div><img src="{% static 'client/images/Logo_muito_simples_branco_small.png' %}"/></div></a>
       </div>
 
 
@@ -37,9 +37,9 @@
       <!-- Items -->
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="nav navbar-nav">
-          <li class="{% block client_active %}{% endblock %}"><a href="{% url 'client:client_index' %}"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; Area de Cliente</a></li>
-          <li class="{% block suply_active %}{% endblock %}"><a href="{% url 'client:songs' 'all' %}"><i class="fa fa-coffee" aria-hidden="true"></i>&nbsp; Suplementos</a></li>
-          <li class="{% block mercha_active %}{% endblock %}"><a href="{% url 'client:songs' 'all' %}"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp; Merchadising</a></li>
+          <li class="{% block client_active %}{% endblock %}"><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; Area de Cliente</a></li>
+          <li class="{% block suply_active %}{% endblock %}"><a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>&nbsp; Suplementos</a></li>
+          <li class="{% block mercha_active %}{% endblock %}"><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp; Merchadising</a></li>
         </ul>
         <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'client:index' %}">
           <div class="form-group">
@@ -54,7 +54,7 @@
         </a>
       </li>-->
       <li>
-        <a href="{% url 'client:logout_user' %}"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout
+        <a href="#"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout
         </a>
       </li>
     </ul>
@@ -65,18 +65,20 @@
 <div id="wrapper">
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li ><a href="{% url 'client:client_pessoal' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a></li>
-      <li ><a href="{% url 'client:client_nutricao' %}"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Planos Nutricionais</a></li>
-      <li ><a href="{% url 'client:client_treinos' %}"><i class="fa fa-child" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Dicas de Treino</a></li>
-      <li ><a href="{% url 'client:client_calendar' %}"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Calendário de Treino</a></li>
-      <li ><a href="{% url 'client:client_progresso' %}"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Progresso</a></li>
-      <li ><a href="{% url 'client:client_video' %}"><i class="fa fa-film" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Video Aulas</a></li>
+      <li ><a href="#"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a></li>
+      <li ><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Planos Nutricionais</a></li>
+      <li ><a href="#"><i class="fa fa-child" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Dicas de Treino</a></li>
+      <li ><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Calendário de Treino</a></li>
+      <li ><a href="#"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Progresso</a></li>
+      <li ><a href="#"><i class="fa fa-film" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Video Aulas</a></li>
     </ul>
 
   </div>
   <div id="page-content-wrapper">
   {% block body %}
   {% endblock %}
+  </div>
+</div>
 
 <script>
 $("#menu-toggle").click( function(e){

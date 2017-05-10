@@ -10,8 +10,27 @@ from .forms import UserForm,ProfileForm
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
-def index(request):
-    return render(request, 'home.html')
+def treinos(request):
+    return render(request,'client_treinos.html')
+def planos(request):
+    return render(request,'client_nutricao.html')
+
+def dicas(request):
+    return render(request,'client_treinos.html')
+def calendario(request):
+    return render(request,'client_calendar.html')
+def progresso(request):
+    return render(request,'client_progresso.html')
+def videoaulas(request):
+    return render(request,'client_videos.html')
+
+
+
+
+
+
+
+
 
 
 def create_album(request):
@@ -128,7 +147,7 @@ def favorite_album(request, album_id):
 
 def index(request):
     if not request.user.is_authenticated():
-        return render(request, 'login.html')
+        return render(request, 'client/client_pessoal.html')
     else:
         albums = Album.objects.filter(user=request.user)
         song_results = Song.objects.all()
@@ -141,12 +160,12 @@ def index(request):
             song_results = song_results.filter(
                 Q(song_title__icontains=query)
             ).distinct()
-            return render(request, 'login.html', {
+            return render(request, 'client/client_pessoal.html', {
                 'albums': albums,
                 'songs': song_results,
             })
         else:
-            return render(request, 'client/index.html', {'albums': albums})
+            return render(request, 'client/client_pessoal.html', {'albums': albums})
 
 
 def logout_user(request):
