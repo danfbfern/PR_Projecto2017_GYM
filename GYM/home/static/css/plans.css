@@ -156,7 +156,21 @@ html {
   margin-left: 20%;
   cursor: pointer;
 }
+#plano_free a{
+  text-decoration: none;
+}
+#plano_free a:hover{
+  text-decoration: none;
+  opacity: 0.7;
+}
 
+#plano_premium a{
+  text-decoration: none;
+}
+#plano_premium a:hover{
+  text-decoration: none;
+  opacity: 0.7;
+}
 #plano_free span{
   font-size: 50%;
   display: block;

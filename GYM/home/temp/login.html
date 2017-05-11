@@ -19,6 +19,7 @@
 
   <!-- icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' >
   <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
 
 </head>
@@ -61,13 +62,17 @@
                     </form>
                 </div><br>
                 <div class="panel-footer" style="color: #366E7C; font-size:12px;">
-                    Don't have an account? <a href="{% url 'client:register' %}">Click here</a> to register.
+                    Não tens conta? <a href="{% url 'client:register' %}">Carrega Aqui</a> para te registares.
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+<a class="return" href="/home">
+  <i class="fa fa-home" style="font-size: 96px;" aria-hidden="true"></i>
+</a>
+</section>
 
 </body>
 </html>

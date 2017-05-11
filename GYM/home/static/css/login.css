@@ -79,7 +79,7 @@ html {
   font-size: 16px;
   background: #366E7C;;
   padding: 2px 60px 2px 60px;
-  border: solid #366E7C; 1px;
+  border: solid #366E7C;
   text-decoration: none;
 }
 
@@ -87,7 +87,12 @@ html {
   background: #D8543F;;
   text-decoration: none;
 }
-
-
-
+.return{
+  position: fixed;
+  top: 85%;
+  left: 90%;
+  color: #366E7C;
+}
+.return:hover{
+  color: #D8543F;
 }

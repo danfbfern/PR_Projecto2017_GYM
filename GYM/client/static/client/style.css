@@ -55,13 +55,13 @@ h2::before{
   position: absolute;
 }
 #wrapper.menu #sidebar-wrapper{
-  width: 13%;
+  width: 12%;
   transition: right 0.6s ease;
 }
 
 #wrapper.menu #page-content-wrapper{
-  margin-left: 13%;
-  width:87%;
+  margin-left: 12%;
+  width:88%;
 }
 #menu-toggle{
   color: white;
