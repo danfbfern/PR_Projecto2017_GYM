@@ -49,7 +49,7 @@
         </a>
       </li>-->
       <li>
-        <a href="#"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout
+        <a href="{% url 'client:logout_user' %}"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout
         </a>
       </li>
     </ul>
@@ -60,7 +60,9 @@
 <div id="wrapper">
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li ><a href=""><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a></li>
+      <li ><a href="{% url 'client:suply_em' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Emagrecer</a></li>
+      <li ><a href="{% url 'client:suply_mass' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Massa/Definição Muscular </a></li>
+      <li ><a href="{% url 'client:suply_forc' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Força/Resistência</a></li>
     </ul>
 
   </div>

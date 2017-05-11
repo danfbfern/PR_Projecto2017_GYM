@@ -74,6 +74,26 @@ def area_suply(request):
     else:
      return render(request,'suply_index.html')
 
+def suply_em(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'suply_emagrecer.html')
+
+
+def suply_mass(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'suply_massa.html')
+
+def suply_forc(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'suply_forca.html')
+
+
 
 
 
@@ -186,7 +206,7 @@ def perfil(request):
             if user.is_active:
                     login(request, user)
                     user_account = request.user
-                    
+
                     return render(request,'client_index.html')
 
 

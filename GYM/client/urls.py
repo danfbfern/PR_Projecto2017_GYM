@@ -20,6 +20,11 @@ url(r'^merch_acessorios/$', views.merch_acessorios  , name='merch_acessorios'),
 url(r'^area_cliente/$', views.area_cliente  , name='area_cliente'),
 url(r'^area_merch/$', views.area_merch  , name='area_merch'),
 url(r'^area_suply/$', views.area_suply , name='area_suply'),
+url(r'^suply_em/$', views.suply_em  , name='suply_em'),
+url(r'^suply_mass/$', views.suply_mass  , name='suply_mass'),
+url(r'^suply_forc/$', views.suply_forc  , name='suply_forc'),
+
+
 
 
     #url(r'^login_user/$', views.login_user, name='login_user'),

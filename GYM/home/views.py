@@ -14,7 +14,7 @@ def index(request):
   render(request,'index.html', {'index': index})
 
   try:
-   print('tentei TRY')
+
    username = request.POST.get('register_username')
    password = request.POST.get('register_password')
    email = request.POST.get('register_email')
@@ -28,7 +28,7 @@ def index(request):
 
   else:
    if username is None:
-    print('username in NONE')
+
     username = request.POST.get('register_username')
     password = request.POST.get('register_password')
     email = request.POST.get('register_email')
@@ -100,4 +100,3 @@ def register(request):
 
 def plans(request):
  return render(request,'plans.html')
-
