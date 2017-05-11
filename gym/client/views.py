@@ -5,7 +5,8 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.db.models import Q
 from django.http import HttpResponse
 from .models import Album, Song,Profile
-from .forms import UserForm,ProfileForm
+from .forms import UserForm,AlbumForm
+from django.utils.datastructures import MultiValueDictKeyError
 
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
@@ -49,30 +50,7 @@ def videoaulas(request):
 
 
 
-def create_album(request):
-    if not request.user.is_authenticated():
-        return render(request, 'client/login.html')
-    else:
-        form = AlbumForm(request.POST or None, request.FILES or None)
-        if form.is_valid():
-            album = form.save(commit=False)
-            album.user = request.user
-            album.album_logo = request.FILES['album_logo']
-            file_type = album.album_logo.url.split('.')[-1]
-            file_type = file_type.lower()
-            if file_type not in IMAGE_FILE_TYPES:
-                context = {
-                    'album': album,
-                    'form': form,
-                    'error_message': 'Image file must be PNG, JPG, or JPEG',
-                }
-                return render(request, 'client/create_album.html', context)
-            album.save()
-            return render(request, 'client/detail.html', {'album': album})
-        context = {
-            "form": form,
-        }
-        return render(request, 'client/create_album.html', context)
+
 
 
 def create_song(request, album_id):
@@ -218,17 +196,48 @@ def login_user(request):
     return render(request, 'client/login.html')
 
 
+
+def create_album(request):
+    if not request.user.is_authenticated():
+        return render(request, 'client/login.html')
+    else:
+        form = AlbumForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            album = form.save(commit=False)
+            album.user = request.user
+            file_type = album.album_logo.url.split('.')[-1]
+            file_type = file_type.lower()
+            if file_type not in IMAGE_FILE_TYPES:
+                context = {
+                    'album': album,
+                    'form': form,
+                    'error_message': 'Image file must be PNG, JPG, or JPEG',
+                }
+                return render(request, 'client/create_album.html', context)
+            album.save()
+            return render(request, 'client/detail.html', {'album': album})
+        context = {
+            "form": form,
+        }
+        return render(request, 'client/create_album.html', context)
+
+
 def register(request):
     form = UserForm(request.POST or None)
+    form_perfil = AlbumForm(request.POST or None)
+
 
 
 
     if form.is_valid():
         user = form.save(commit=False)
+        form_perfil = form.save(commit=False)
+        form_perfil.user = request.user
+
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
         user.set_password(password)
-
+        form_perfil.save()
 
         user.save()
 
@@ -236,10 +245,10 @@ def register(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                albums = Album.objects.filter(user=request.user)
-                return render(request, 'client_pessoal.html', {'albums': albums})
+                return render(request, 'client_pessoal.html')
     context = {
-        "form": form
+        "form": form,
+        'form_perfil' :form_perfil
 
     }
     return render(request, 'register.html', context)
@@ -268,7 +277,7 @@ def songs(request, filter_by):
 def update_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        profile_form = AlbumForm(request.POST, instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
@@ -280,7 +289,7 @@ def update_profile(request):
             print('erro')
     else:
         user_form = UserForm(instance=request.user)
-        profile_form = ProfileForm(instance=request.user.profile)
+        profile_form = AlbumForm(instance=request.user.profile)
     return render(request, 'profile.html', {
         'user_form': user_form,
         'profile_form': profile_form
@@ -289,12 +298,15 @@ def update_profile(request):
 def perfil(request):
     if not request.user.is_authenticated():
         if request.method == "POST":
+         try:
             username = request.POST['username']
             password = request.POST['password']
             user = authenticate(username=username, password=password)
+         except MultiValueDictKeyError:
+             return
 
-            if user is not None:
-                if user.is_active:
+         if user is not None:
+            if user.is_active:
                     login(request, user)
                     user_account = request.user
                     albums = Album.objects.filter(user=request.user)
@@ -302,28 +314,28 @@ def perfil(request):
 
 
 
-                else:
-                    return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
             else:
+                    return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
+         else:
                 return render(request, 'login.html', {'error_message': 'Invalid login'})
         return render(request, 'login.html')
     else:
         render(request,'client_pessoal.html')
         if request.method == 'POST':
             user_form = UserForm(request.POST, instance=request.user)
-            profile_form = ProfileForm(request.POST, instance=request.user.profile)
+            profile_form = AlbumForm(request.POST, instance=request.user)
             profile_form.user = request.user
             if user_form.is_valid() and profile_form.is_valid():
                 user_form.save()
                 profile_form.save()
                 #messages.success(request, _('Your profile was successfully updated!'))
-                return redirect('client_pessoal')
+                return render(request,'client_pessoal.html')
             else:
                  print('lol')
                  #messages.error(request, _('Please correct the error below.'))
         else:
                user_form = UserForm(instance=request.user)
-               profile_form = ProfileForm(instance=request.user.profile)
+               profile_form = AlbumForm(instance=request.user)
         return render(request, 'client_pessoal.html', {
             'user_form': user_form,
             'profile_form': profile_form

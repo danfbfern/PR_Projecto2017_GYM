@@ -6,14 +6,14 @@ from django.db.models.signals import post_save
 
 class Album(models.Model):
     user = models.ForeignKey(User, default=1)
-    artist = models.CharField(max_length=250)
-    album_title = models.CharField(max_length=500)
-    genre = models.CharField(max_length=100)
-    album_logo = models.FileField()
-    is_favorite = models.BooleanField(default=False)
+    idade = models.IntegerField()
+    altura = models.IntegerField()
+    peso = models.IntegerField()
+
+    is_premium = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.album_title + ' - ' + self.artist
+        return self.user + ' - ' + self.idade
 
 
 class Song(models.Model):
@@ -50,10 +50,10 @@ class Song(models.Model):
 
 class Profile(models.Model):
     user = models.ForeignKey(User)
-    is_premium = models.BooleanField(default=True)
-    idade = models.IntegerField(blank=True, null=True)
-    altura = models.IntegerField(blank=True, null=True)
-    peso = models.IntegerField(blank=True, null=True)
+    is_premium = models.BooleanField(default=False)
+    idade = models.IntegerField()
+    altura = models.IntegerField()
+    peso = models.IntegerField()
 
 #@receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
