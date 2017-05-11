@@ -29,7 +29,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"  href="#"><div><img src="{% static 'client/images/Logo_muito_simples_branco_small.png' %}"/></div></a>
+        <a class="navbar-brand"  href="../../home"><div><img src="{% static 'client/images/Logo_muito_simples_branco_small.png' %}"/></div></a>
       </div>
 
 
@@ -54,7 +54,7 @@
         </a>
       </li>-->
       <li>
-        <a href="#"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout
+        <a href="{% url 'client:logout_user' %}"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp; Logout
         </a>
       </li>
     </ul>
@@ -65,7 +65,7 @@
 <div id="wrapper">
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li ><a href=""><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a></li>
+      <li ><a href="{% url 'client:perfil' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a></li>
       <li ><a href="{% url 'client:planos' %}"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Planos Nutricionais</a></li>
       <li ><a href="{% url 'client:dicas' %}"><i class="fa fa-child" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Dicas de Treino</a></li>
       <li ><a href="{% url 'client:calendario' %}"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Calendário de Treino</a></li>
