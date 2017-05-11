@@ -49,8 +49,8 @@ class Song(models.Model):
    # objects = UserManager()
 
 class Profile(models.Model):
-    user = models.OneToOneField(User)
-    is_premium = models.BooleanField(default=False)
+    user = models.ForeignKey(User)
+    is_premium = models.BooleanField(default=True)
     idade = models.IntegerField(blank=True, null=True)
     altura = models.IntegerField(blank=True, null=True)
     peso = models.IntegerField(blank=True, null=True)
