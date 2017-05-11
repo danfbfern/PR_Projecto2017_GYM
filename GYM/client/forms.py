@@ -12,5 +12,5 @@ class UserForm(forms.ModelForm):
 class AlbumForm(forms.ModelForm):
 
     class Meta:
-         model = Album
+         model = Profile
          fields = ('idade', 'altura', 'peso')

@@ -12,8 +12,6 @@ AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
-
-
 def planos(request):
     if not request.user.is_authenticated():
         return render(request, 'login.html')
@@ -235,29 +233,20 @@ def login_user(request):
 
 
 
-def create_album(request):
+def create_profile(request):
     if not request.user.is_authenticated():
-        return render(request, 'client/login.html')
+        return render(request, 'login.html')
     else:
-        form = AlbumForm(request.POST or None, request.FILES or None)
+        form = AlbumForm(request.POST or None)
         if form.is_valid():
             album = form.save(commit=False)
             album.user = request.user
-            file_type = album.album_logo.url.split('.')[-1]
-            file_type = file_type.lower()
-            if file_type not in IMAGE_FILE_TYPES:
-                context = {
-                    'album': album,
-                    'form': form,
-                    'error_message': 'Image file must be PNG, JPG, or JPEG',
-                }
-                return render(request, 'client/create_album.html', context)
             album.save()
-            return render(request, 'client/detail.html', {'album': album})
+            return render(request, 'client_pessoal.html', {'album': album})
         context = {
             "form": form,
         }
-        return render(request, 'client/create_album.html', context)
+        return render(request, 'client_pessoal.html', context)
 
 
 def register(request):
