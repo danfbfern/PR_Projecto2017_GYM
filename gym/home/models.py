@@ -26,7 +26,7 @@ class User(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User)
-    is_normal = models.BooleanField(default=True)
+
     is_premium = models.BooleanField(default=False)
     idade = models.IntegerField(blank=True)
     altura = models.IntegerField(blank=True)

@@ -14,16 +14,31 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
 def planos(request):
-    return render(request,'cliente_nutricao.html')
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'cliente_nutricao.html')
 
 def dicas(request):
-    return render(request,'client_treinos.html')
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'client_treinos.html')
 def calendario(request):
-    return render(request,'client_calendar.html')
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'client_calendar.html')
 def progresso(request):
-    return render(request,'client_progresso.html')
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'client_progresso.html')
 def videoaulas(request):
-    return render(request,'client_video.html')
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'client_video.html')
 
 
 
@@ -205,16 +220,16 @@ def login_user(request):
 
 def register(request):
     form = UserForm(request.POST or None)
-    profile = ProfileForm()
+
+
 
     if form.is_valid():
         user = form.save(commit=False)
-        profile2 = form.save(commit=False)
-        profile2.user = request.user
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
         user.set_password(password)
-        profile2.save()
+
+
         user.save()
 
         user = authenticate(username=username, password=password)
@@ -297,6 +312,7 @@ def perfil(request):
         if request.method == 'POST':
             user_form = UserForm(request.POST, instance=request.user)
             profile_form = ProfileForm(request.POST, instance=request.user.profile)
+            profile_form.user = request.user
             if user_form.is_valid() and profile_form.is_valid():
                 user_form.save()
                 profile_form.save()
