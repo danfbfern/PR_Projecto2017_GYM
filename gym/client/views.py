@@ -58,6 +58,23 @@ def merch_acessorios(request):
         return render(request, 'login.html')
     else:
      return render(request,'mercha_acessorios.html')
+def area_cliente(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'client_index.html')
+
+def area_merch(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'mercha_index.html')
+
+def area_suply(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'suply_index.html')
 
 
 

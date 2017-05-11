@@ -45,16 +45,11 @@
       <!-- Items -->
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="nav navbar-nav">
-          <li class="{% block client_active %}{% endblock %}"><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; Area de Cliente</a></li>
-          <li class="{% block suply_active %}{% endblock %}"><a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>&nbsp; Suplementos</a></li>
-          <li class="{% block mercha_active %}{% endblock %}"><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp; Merchandising</a></li>
+          <li class="{% block client_active %}{% endblock %}"><a href="{% url 'client:area_cliente' %}"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; Area de Cliente</a></li>
+          <li class="{% block suply_active %}{% endblock %}"><a href="{% url 'client:area_suply' %}"><i class="fa fa-coffee" aria-hidden="true"></i>&nbsp; Suplementos</a></li>
+          <li class="{% block mercha_active %}{% endblock %}"><a href="{% url 'client:area_merch' %}"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp; Merchandising</a></li>
         </ul>
-        <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'client:index' %}">
-          <div class="form-group">
-            <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
-          </div>
-          <button type="submit" class="btn btn-default">Search</button>
-        </form>
+
         <ul class="nav navbar-nav navbar-right">
           <!--<li>
           <a href="{% url 'client:create_album' %}">

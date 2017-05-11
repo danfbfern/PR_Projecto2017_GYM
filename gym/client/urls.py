@@ -16,6 +16,9 @@ url(r'^videoaulas/$', views.videoaulas  , name='videoaulas'),
 url(r'^merch_calcado/$', views.merch_calcado  , name='merch_calcado'),
 url(r'^merch_roupa/$', views.merch_roupa  , name='merch_roupa'),
 url(r'^merch_acessorios/$', views.merch_acessorios  , name='merch_acessorios'),
+url(r'^area_cliente/$', views.area_cliente  , name='area_cliente'),
+url(r'^area_merch/$', views.area_merch  , name='area_merch'),
+url(r'^area_suply/$', views.area_suply , name='area_suply'),
 
 
 
