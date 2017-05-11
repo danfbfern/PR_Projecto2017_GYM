@@ -13,7 +13,7 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 def treinos(request):
     return render(request,'client_treinos.html')
 def planos(request):
-    return render(request,'client_nutricao.html')
+    return render(request,'cliente_nutricao.html')
 
 def dicas(request):
     return render(request,'client_treinos.html')
@@ -22,7 +22,7 @@ def calendario(request):
 def progresso(request):
     return render(request,'client_progresso.html')
 def videoaulas(request):
-    return render(request,'client_videos.html')
+    return render(request,'client_video.html')
 
 
 
