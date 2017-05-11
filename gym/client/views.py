@@ -41,6 +41,27 @@ def videoaulas(request):
     else:
      return render(request,'client_video.html')
 
+def merch_calcado(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'mercha_calcado.html')
+
+def merch_roupa(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'mercha_roupa.html')
+
+def merch_acessorios(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html')
+    else:
+     return render(request,'mercha_acessorios.html')
+
+
+
+
 
 
 

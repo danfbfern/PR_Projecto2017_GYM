@@ -13,6 +13,10 @@ url(r'^dicas/$', views.dicas, name='dicas'),
 url(r'^calendario/$', views.calendario, name='calendario'),
 url(r'^progresso/$', views.progresso, name='progresso'),
 url(r'^videoaulas/$', views.videoaulas  , name='videoaulas'),
+url(r'^merch_calcado/$', views.merch_calcado  , name='merch_calcado'),
+url(r'^merch_roupa/$', views.merch_roupa  , name='merch_roupa'),
+url(r'^merch_acessorios/$', views.merch_acessorios  , name='merch_acessorios'),
+
 
 
     url(r'^profile/$', views.update_profile, name='profile'),
