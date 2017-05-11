@@ -322,7 +322,7 @@ def update_profile(request):
         'profile_form': profile_form
     })
 
-def perfil(request):
+def perfil(request,user_id):
     if not request.user.is_authenticated():
         if request.method == "POST":
          try:
@@ -347,4 +347,7 @@ def perfil(request):
                 return render(request, 'login.html', {'error_message': 'Invalid login'})
         return render(request, 'login.html')
     else:
-        return render(request,'client_index.html')
+        user = request.user
+        profile = get_object_or_404(Profile,pk=profile_id)
+        return render(request,'client_index.html',{'profile': profile, 'user': user})
+

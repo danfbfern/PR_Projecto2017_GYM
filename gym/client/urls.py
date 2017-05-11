@@ -5,7 +5,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 app_name = 'client'
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    #url(r'^$', views.index, name='index'),
     url(r'^register/$', views.register, name='register'),
     url(r'^perfil/$', views.perfil, name='perfil'),
     url(r'^perfil/editar$', views.create_profile, name='cperfil'),
