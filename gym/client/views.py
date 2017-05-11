@@ -337,7 +337,7 @@ def perfil(request):
                     login(request, user)
                     user_account = request.user
                     albums = Album.objects.filter(user=request.user)
-                    return render(request,'client_pessoal.html')
+                    return render(request,'client_index.html')
 
 
 
@@ -347,23 +347,4 @@ def perfil(request):
                 return render(request, 'login.html', {'error_message': 'Invalid login'})
         return render(request, 'login.html')
     else:
-        render(request,'client_pessoal.html')
-        if request.method == 'POST':
-            user_form = UserForm(request.POST, instance=request.user)
-            profile_form = AlbumForm(request.POST, instance=request.user)
-            profile_form.user = request.user
-            if user_form.is_valid() and profile_form.is_valid():
-                user_form.save()
-                profile_form.save()
-                #messages.success(request, _('Your profile was successfully updated!'))
-                return render(request,'client_pessoal.html')
-            else:
-                 print('lol')
-                 #messages.error(request, _('Please correct the error below.'))
-        else:
-               user_form = UserForm(instance=request.user)
-               profile_form = AlbumForm(instance=request.user)
-        return render(request, 'client_pessoal.html', {
-            'user_form': user_form,
-            'profile_form': profile_form
-        })
+        return render(request,'client_index.html')
