@@ -23,6 +23,14 @@ def progresso(request):
     return render(request,'client_progresso.html')
 def videoaulas(request):
     return render(request,'client_video.html')
+def merch(request):
+    return render(request,'mercha_index.html')
+def merch_roupa(request):
+    return render(request,'mercha_roupa.html')
+def merch_calcado(request):
+    return render(request,'mercha_calcado.html')
+def merch_acessorios(request):
+    return render(request,'mercha_acessorios.html')
 
 
 
