@@ -3,6 +3,10 @@
 {% block client_active %}active{% endblock %}
 
 {% block body %}
+
+
+
+
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6">
@@ -26,6 +30,12 @@
           <div class="title2" style=" top: 500px; left: 300px;"> Sobre mim: </div>
 
           <div >
+            <form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  <button type="submit">Save changes</button>
+</form>
 
             <div><div class=title3>  Sexo:</div>  <div class=title4>masculino</div></div>
             <div><div class=title3>  Data de Nascimento:</div>  <div class=title4>22-7-1996</div></div>
@@ -41,5 +51,6 @@
       </div>
     </div>
   </div>
+
 
 {% endblock %}

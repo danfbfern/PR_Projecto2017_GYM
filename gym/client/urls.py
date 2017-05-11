@@ -7,16 +7,16 @@ app_name = 'client'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^register/$', views.register, name='register'),
-    url(r'^treinos/$', views.treinos, name='treinos'),
+    url(r'^perfil/$', views.perfil, name='perfil'),
 url(r'^planos/$', views.planos, name='planos'),
 url(r'^dicas/$', views.dicas, name='dicas'),
 url(r'^calendario/$', views.calendario, name='calendario'),
 url(r'^progresso/$', views.progresso, name='progresso'),
-url(r'^videoaulas/$', views.videoaulas, name='videoaulas'),
+url(r'^videoaulas/$', views.videoaulas  , name='videoaulas'),
 
 
     url(r'^profile/$', views.update_profile, name='profile'),
-    url(r'^login_user/$', views.login_user, name='login_user'),
+    #url(r'^login_user/$', views.login_user, name='login_user'),
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
     url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'),
     url(r'^(?P<song_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),

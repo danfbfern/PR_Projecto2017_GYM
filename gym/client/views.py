@@ -10,8 +10,9 @@ from .forms import UserForm,ProfileForm
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
-def treinos(request):
-    return render(request,'client_treinos.html')
+
+
+
 def planos(request):
     return render(request,'cliente_nutricao.html')
 
@@ -147,7 +148,7 @@ def favorite_album(request, album_id):
 
 def index(request):
     if not request.user.is_authenticated():
-        return render(request, 'client/client_pessoal.html')
+        return render(request, 'client_index.html')
     else:
         albums = Album.objects.filter(user=request.user)
         song_results = Song.objects.all()
@@ -160,12 +161,12 @@ def index(request):
             song_results = song_results.filter(
                 Q(song_title__icontains=query)
             ).distinct()
-            return render(request, 'client/client_pessoal.html', {
+            return render(request, 'client_index.html', {
                 'albums': albums,
                 'songs': song_results,
             })
         else:
-            return render(request, 'client/client_pessoal.html', {'albums': albums})
+            return render(request, 'client_index.html', {'albums': albums})
 
 
 def logout_user(request):
@@ -174,7 +175,7 @@ def logout_user(request):
     context = {
         "form": form,
     }
-    return render(request, 'client/login.html', context)
+    return render(request, 'login.html', context)
 
 
 def login_user(request):
@@ -190,7 +191,7 @@ def login_user(request):
                  albums = Album.objects.filter(user=request.user)
 
 
-                 if Profile(user_account).is_premiumm(request.user) is True:
+                 if Profile(user_account).is_premium(request.user) is True:
                      return render(request, 'client/index.html', {'albums': albums})
                  else:
                      return HttpResponse('LOOOOOOOL DEU')
@@ -221,12 +222,12 @@ def register(request):
             if user.is_active:
                 login(request, user)
                 albums = Album.objects.filter(user=request.user)
-                return render(request, 'client/index.html', {'albums': albums})
+                return render(request, 'client_pessoal.html', {'albums': albums})
     context = {
         "form": form
 
     }
-    return render(request, 'client/register.html', context)
+    return render(request, 'register.html', context)
 
 
 def songs(request, filter_by):
@@ -269,3 +270,45 @@ def update_profile(request):
         'user_form': user_form,
         'profile_form': profile_form
     })
+
+def perfil(request):
+    if not request.user.is_authenticated():
+        if request.method == "POST":
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    user_account = request.user
+                    albums = Album.objects.filter(user=request.user)
+                    return render(request,'client_pessoal.html')
+
+
+
+                else:
+                    return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
+            else:
+                return render(request, 'login.html', {'error_message': 'Invalid login'})
+        return render(request, 'login.html')
+    else:
+        if request.method == 'POST':
+            user_form = UserForm(request.POST, instance=request.user)
+            profile_form = ProfileForm(request.POST, instance=request.user.profile)
+            if user_form.is_valid() and profile_form.is_valid():
+                user_form.save()
+                profile_form.save()
+                # messages.success(request, _('Your profile was successfully updated!'))
+                print('sucesso')
+                return redirect('profile')
+            else:
+                # messages.error(request, _('Please correct the error below.'))
+                print('erro')
+        else:
+            user_form = UserForm(instance=request.user)
+            profile_form = ProfileForm(instance=request.user.profile)
+        return render(request, 'profile.html', {
+            'user_form': user_form,
+            'profile_form': profile_form
+        })
